@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Dashboard</title>
+
+<link href="dashboard.css" rel="stylesheet" >
+<script>
+            function random_function()
+            {
+                var a=document.getElementById("disease").value;
+                if(a==="Bone and joints")
+                {
+                    var arr=["Joint_stiffness","Decreased_range_of_motion","Decreased_joint_function","Bumps_on_small_finger_joints","Fatigue_and_whole-body_symptoms","Unexplained_back_pain","Leg-length_discrepancy"];
+                }
+                else if(a==="Brain and Nerves")
+                {
+                    var arr=["Memory_loss","Impaired_mental_ability","Lack_of_coordination","Muscle_rigidity","Tremors_and_seizures","Muscle_wasting","Slurred_speech","Loss_of_feeling","New_language_impairment"];
+                }
+                else if(a==="Cancer")
+                {
+                    var arr=["Fatigue","Hoarseness","Difficulty_swallowing","Persistent_cough_or_trouble_breathing","Unexplained_bleeding","Unexplained_bruising","Skin_changes","Changes_in_bowel","Changes_bladder_habits","Weight changes"];
+                }
+                else if(a==="Child")
+                {
+                    var arr=["Sore_Throat","Ear_Pain","Urinary_Tract_Infection","Skin_Infection","Common_Cold","Pain","Bacterial Sinusitis","Cough"];
+                }
+                else if(a==="Dental")
+                {
+                    var arr=["chronic_bad_breath","tender_areas_in_the_mouth","ulcers_or_sores","bleeding_or_swollen_gums","chronic_bad_breath","sudden_sensitivity","pain_or_toothache","loose_teeth","receding_gums","clicking_of_the_jaw","frequent_dry_mouth"];
+                }
+                else if(a==="Diabetes_Management")
+                {
+                    var arr=["Increased_thirst","Frequent_urination","Extreme_hunger","Unexplained_weight_loss","Fatigue","Irritability","Blurred_vision","Slow-healing_sores"];
+                }
+                else if(a==="Digestive_Issue")
+                {
+                    var arr=["Bleeding","Bloating","Constipation","Diarrhea","Diarrhea","Incontinence","Nausea_and_vomiting","Pain_in_the_belly","Swallowing_problems","Weight_gain/loss"];
+                }
+                          
+             
+                var string="";
+             
+                for(i=0;i<arr.length;i++)
+                {
+                    string=string+"<option value="+arr[i]+">"+arr[i]+"</option>";
+                }
+                document.getElementById("symptom1").innerHTML=string;
+				document.getElementById("symptom2").innerHTML=string;
+				document.getElementById("symptom3").innerHTML=string;
+                
+               
+            }
+            
+            
+           
+        </script>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+	 " rel="stylesheet">
+	 <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	  <link href="style.css" rel="stylesheet" >
+	  <script>
+	  	function openSlideMenu(){
+	  		document.getElementById('menu').style.width='250px';
+	  		document.getElementById('content').style.marginLeft='250px';
+	  	}
+	  	function closeSlideMenu(){
+	  		document.getElementById('menu').style.width='0';
+	  		document.getElementById('content').style.marginLeft='0';
+	  	}
+	  </script>
+        
+    </head>
+    <body>
+    <div id="content">
+		
+			<span class="slide">
+				<a href="#"onclick="openSlideMenu()">
+				<i class="fas fa-bars"></i>
+				</a>
+			</span>
+			<div id="menu" class="nav">
+				<a href="#" class="close" onclick="closeSlideMenu()">
+					<i class="fas fa-times"></i>
+					</a>
+					<a href="patientProfile.jsp">Home</a>
+					<a href="patientDashboard.html">DASHBOARD</a>
+					<a href="patientRequest.jsp">Book Test</a>
+					<a href="retreveReport1.jsp">My Reports</a>
+					<a href="patientPrescription.jsp">My Prescriptions</a>
+					<a href="patientLogout.jsp">Logout</a>
+			</div>
+			<h1>DASHBOARD</h1>
+					</div>
+	<form action="patientDatabase.jsp" method="get">
+	<label for="disease"><b>Field:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+        <select id="disease" name="disease" onchange="random_function()">
+           <option value="">-- Disease --</option> 
+  	<option>Bone and joints</option> 
+  	<option>Brain and Nerves</option> 
+   	<option>Cancer</option>
+   	<option>Child</option> 
+   	<option>Dental</option>
+   	<option>Diabetes_Management</option> 
+   	<option>Digestive_Issue</option> 
+        </select>
+        
+        <div>
+			<label for="symptom1"><b>Symptom1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+           <select input type="text" id="symptom1" name="symptom1" onchange="random_function1()">
+        </select>
+		</div>
+		
+		 <div>
+			<label for="symptom2"><b>Symptom2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+           <select input type="text" id="symptom2" name="symptom2" onchange="random_function2()">
+        </select>
+		</div>
+		
+		 <div>
+			<label for="symptom3"><b>Symptom3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+           <select input type="text" id="symptom3" name="symptom3" onchange="random_function3()">
+        </select>
+		</div>
+		<br>
+		<div>
+		<label for="symptom4"><b>Other(Mention Allergies if any):</b><br></label>
+		<textarea id="symptom4" name="symptom4" rows="4" cols="50">
+		</textarea><br>
+		</div>
+		
+        <br>
+        
+	
+	
+	
+		<input type="submit" value="Submit"></input>&nbsp; <a href="patientHistory.jsp"><input type="button" value="ViewHistory"></input></a>
+		</form>
+	
+		
+	
+		
+		
+		
+    </body>
+</html>
